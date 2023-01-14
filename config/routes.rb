@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   resources :seats
   resources :bookings
   resources :saccos, only:[:index,:create,:show,:update]
-
+  resources :selectedseats, only:[:index, :show, :destroy]
 
   post '/customer/signup',  to: "customers#create"
   post '/customer/login', to: 'sessions#customer_login'

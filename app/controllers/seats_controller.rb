@@ -1,5 +1,4 @@
 class SeatsController < ApplicationController
-  #before_action :set_seat, only: %i[ show update destroy ]
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /seats
