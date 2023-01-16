@@ -1,0 +1,2 @@
+class Selectedseat < ApplicationRecord
+end

@@ -20,4 +20,10 @@ Rails.application.routes.draw do
   post '/sacco/login', to: 'sessions#sacco_login'
   delete '/sacco/logout', to: 'sessions#sacco_logout'
 
+
+  post '/msacco/signup',  to: "msaccos#create"
+  post '/msacco/login', to: 'sessions#msacco_login'
+  delete '/msacco/logout', to: 'sessions#msacco_logout'
+
+
 end
