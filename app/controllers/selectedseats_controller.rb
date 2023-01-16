@@ -13,6 +13,11 @@ class SelectedseatsController < ApplicationController
     render json: selectedseat
   end
 
+  def create
+    selectedseat = SelectedSeat.create(selectedseat_params)
+    render json: selectedseat, status: :created
+  end
+
   # DELETE /selectedseats/1
   def destroy
     selectedseat = find_selectedseat

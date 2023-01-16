@@ -91,12 +91,16 @@ saccos = Sacco.create([
   {
     "name": "John Doe",
     "email": "johndoe@gmail.com",
-    "password_digest": "123456"
+    "password_digest": "123456",
+    "phone_no": 0711111111,
+    "ID_no": 21212121
   },
   {
     "name": "Jane Doe",
     "email": "janedoe@gmail.com",
-    "password_digest": "abcdef"
+    "password_digest": "abcdef",
+    "phone_no": 0700000000,
+    "ID_no": 20202020
   }
 ]),
 routes=Route.create( [
@@ -130,48 +134,4 @@ vehicle=Vehicle.create( [
     "sacco_id": 2,
     "image": "bus2.jpg"
   }
-]),
-Selectedseats = Selectedseat.create([
-  { "seat_no": 1, "status": "false" },
-  { "seat_no": 2, "status": "false" },
-  { "seat_no": 3, "status": "false" },
-  { "seat_no": 4, "status": "false" },
-  { "seat_no": 5, "status": "false" },
-  { "seat_no": 6, "status": "false" },
-  { "seat_no": 7, "status": "false" },
-  { "seat_no": 8, "status": "false" },
-  { "seat_no": 9, "status": "false" },
-  { "seat_no": 10, "status": "false" },
-  { "seat_no": 11, "status": "false" },
-  { "seat_no": 12, "status": "false" },
-  { "seat_no": 13, "status": "false" },
-  { "seat_no": 14, "status": "false" },
-  { "seat_no": 15, "status": "false" },
-  { "seat_no": 16, "status": "false" },
-  { "seat_no": 17, "status": "false" },
-  { "seat_no": 18, "status": "false" },
-  { "seat_no": 19, "status": "false" },
-  { "seat_no": 20, "status": "false" },
-  { "seat_no": 21, "status": "false" },
-  { "seat_no": 22, "status": "false" },
-  { "seat_no": 23, "status": "false" },
-  { "seat_no": 24, "status": "false" },
-  { "seat_no": 25, "status": "false" },
-  { "seat_no": 26, "status": "false" },
-  { "seat_no": 27, "status": "false" },
-  { "seat_no": 28, "status": "false" },
-  { "seat_no": 29, "status": "false" },
-  { "seat_no": 30, "status": "false" },
-  { "seat_no": 31, "status": "false" },
-  { "seat_no": 32, "status": "false" },
-  { "seat_no": 33, "status": "false" },
-  { "seat_no": 34, "status": "false" },
-  { "seat_no": 35, "status": "false" },
-  { "seat_no": 36, "status": "false" },
-  { "seat_no": 37, "status": "false" }
 ])
-
-
- 
-
-  #puts "done "

@@ -30,6 +30,6 @@ class CustomersController < ApplicationController
         private 
         
         def customer_params
-        params.permit(:name, :email, :password)
+        params.permit(:name, :email, :password, :ID_no, :phone_no)
         end
 end

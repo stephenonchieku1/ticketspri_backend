@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   resources :seats
   resources :bookings
   resources :saccos, only:[:index,:create,:show,:update]
-  resources :selectedseats, only:[:index, :show, :destroy]
+  resources :selectedseats
 
+  get '/customer/me', to: 'sessions#show_customer'
   post '/customer/signup',  to: "customers#create"
   post '/customer/login', to: 'sessions#customer_login'
   delete '/customer/logout', to: 'sessions#customer_logout'
 
+  get '/sacco/me', to: 'sessions#show_sacco'
   post '/sacco/signup',  to: "saccos#create"
   post '/sacco/login', to: 'sessions#sacco_login'
   delete '/sacco/logout', to: 'sessions#sacco_logout'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_14_063044) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_16_051414) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_063044) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "phone_no"
+    t.integer "ID_no"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -48,13 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_063044) do
   end
 
   create_table "seats", force: :cascade do |t|
-    t.integer "seat_no"
-    t.boolean "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "selected_seats", force: :cascade do |t|
     t.integer "seat_no"
     t.boolean "status"
     t.datetime "created_at", null: false
