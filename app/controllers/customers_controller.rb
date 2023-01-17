@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-    #skip_before_action :authorize, only: :create
+    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
     def index
         customer=Customer.all
@@ -23,8 +23,14 @@ class CustomersController < ApplicationController
     else  
         render json: {errors: customer.errors.full_messages}, status: :unprocessable_entity
     end
-   
-    end
+end
+
+  def destroy
+        customer = find_customer
+        customer.destroy
+        head :no_content
+      end
+
   
 
     private 
@@ -32,4 +38,13 @@ class CustomersController < ApplicationController
     def customer_params
     params.permit(:name, :email, :password, :ID_no, :phone_no)
     end
+
+    def find_customer
+      Customer.find(params[:id])
+    end
+
+    def render_not_found_response
+       render json: {error:"Customer not found!"}, status: :not_found
+    end 
+
 end

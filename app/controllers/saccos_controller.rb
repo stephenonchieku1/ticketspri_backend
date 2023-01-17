@@ -37,11 +37,9 @@ class SaccosController < ApplicationController
       end
   end
 
-  
-
   private
     def sacco_params
-      params.permit(:name, :email, :password, :image_url)
+      params.permit(:name, :email, :password)
     end
 
    def find_sacco

@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
     has_many :bookings
-     validates :email,presence: true,uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+     validates :email,presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :phone_no,   
                      :numericality => true,
                      :length => { :minimum => 10, :maximum => 15 } 

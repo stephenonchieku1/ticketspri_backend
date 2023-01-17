@@ -4,12 +4,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :customers, only:[:create,:index,:show]
+  resources :customers
   resources :vehicles
   resources :routes
   resources :seats
   resources :bookings
-  resources :saccos, only:[:index,:create,:show,:update]
+  resources :saccos
   resources :selectedseats
 
   get '/customer/me', to: 'sessions#show_customer'
