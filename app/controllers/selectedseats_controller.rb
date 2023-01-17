@@ -14,7 +14,7 @@ class SelectedseatsController < ApplicationController
     end
   
     def create
-      selectedseat = SelectedSeat.create(selectedseat_params)
+      selectedseat = Selectedseat.create(selectedseat_params)
       render json: selectedseat, status: :created
     end
   
@@ -33,7 +33,7 @@ class SelectedseatsController < ApplicationController
       end
   
       def selectedseat_params
-        params.permit(:selectedseat_no, :status)
+        params.permit(:seat_no, :status)
       end
   
       def render_not_found_response
