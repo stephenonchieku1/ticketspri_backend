@@ -25,6 +25,13 @@ class CustomersController < ApplicationController
     end
 end
 
+def update
+        customer = find_customer
+        customer.update!(customer_params)
+        render json:customer,status: :ok        
+      end
+  end
+
   def destroy
         customer = find_customer
         customer.destroy
@@ -47,4 +54,3 @@ end
        render json: {error:"Customer not found!"}, status: :not_found
     end 
 
-end
