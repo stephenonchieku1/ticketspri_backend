@@ -119,8 +119,8 @@ vehicle=Vehicle.create( [
   {
     "vehicle_name": "Bus 1",
     "route_id": 1,
-    "departure_time": "12:00",
-    "arrival_time": "14:00",
+    "departure_time": " 12:00:00",
+    "arrival_time": " 14:00:00",
     "no_of_seats": 37,
     "sacco_id": 1,
     "image": "bus1.jpg"
@@ -128,8 +128,8 @@ vehicle=Vehicle.create( [
   {
     "vehicle_name": "Bus 2",
     "route_id": 2,
-    "departure_time": "09:00",
-    "arrival_time": "12:00",
+    "departure_time": " 09:00:00",
+    "arrival_time": " 12:00:00",
     "no_of_seats": 37,
     "sacco_id": 2,
     "image": "bus2.jpg"

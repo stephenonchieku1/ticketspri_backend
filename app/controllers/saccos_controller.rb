@@ -36,12 +36,15 @@ class SaccosController < ApplicationController
       end
   end
 
-
-  
+  #def destroy
+     #  sacco = find_sacco
+       #sacco.destroy
+       # head :no_content
+      end
 
   private
     def sacco_params
-      params.permit(:name, :email, :password, :image_url)
+      params.permit(:name, :email, :password)
     end
 
    def find_sacco
