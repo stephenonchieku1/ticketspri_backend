@@ -35,7 +35,7 @@ class SaccosController < ApplicationController
         sacco.update!(sacco_params)
         render json:sacco,status: :ok        
    end
-   
+
    def destroy
    sacco = find_sacco
    sacco.destroy
@@ -46,7 +46,7 @@ class SaccosController < ApplicationController
 
   private
     def sacco_params
-      params.permit(:name, :email, :password, :image_url)
+      params.permit(:name, :email, :password)
     end
 
    def find_sacco
