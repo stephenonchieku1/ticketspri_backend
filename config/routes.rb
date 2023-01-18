@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :customers, only:[:create,:index,:show]
-  resources :vehicles
   resources :routes
   resources :seats
+  resources :saccos
   resources :bookings
   resources :selectedseats  
    delete "/selectedseats",to: "selectedseats#destroy_all"  
