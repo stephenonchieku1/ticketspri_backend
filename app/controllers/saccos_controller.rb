@@ -35,7 +35,7 @@ class SaccosController < ApplicationController
         sacco.update!(sacco_params)
         render json:sacco,status: :ok        
       end
-  end
+  
 
   #def destroy
      #  sacco = find_sacco
