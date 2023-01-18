@@ -1,2 +1,3 @@
 class Sacco < ApplicationRecord
+    
 end
