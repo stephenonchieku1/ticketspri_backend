@@ -1,0 +1,18 @@
+databases:
+  - name: ticketspri-backend
+    databaseName: ticketspri-backend
+    user: ticketspri-backend
+
+services:
+  - type: web
+    name: ticketspri-backend
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ticketspri-backend
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
