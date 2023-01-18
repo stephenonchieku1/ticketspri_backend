@@ -14,7 +14,7 @@ class SelectedseatsController < ApplicationController
     end
   
     def create
-      selectedseat = SelectedSeat.create(selectedseat_params)
+      selectedseat = Selectedseat.create(selectedseat_params)
       render json: selectedseat, status: :created
     end
   
@@ -23,8 +23,15 @@ class SelectedseatsController < ApplicationController
       selectedseat = find_selectedseat
       selectedseat.destroy
       head :no_content
+    end 
+    def destroy_all
+      if Selectedseat.any?
+        Selectedseat.delete_all
+        render json: {message: "All selected seats have been deleted."}
+      else
+        render json: {error: "No selected seats found"}
+      end
     end
-  
   
   
     private
@@ -33,7 +40,7 @@ class SelectedseatsController < ApplicationController
       end
   
       def selectedseat_params
-        params.permit(:selectedseat_no, :status)
+        params.permit(:seat_no, :status)
       end
   
       def render_not_found_response

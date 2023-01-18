@@ -87,7 +87,8 @@ saccos = Sacco.create([
   { "seat_no": 35, "status": "false" },
   { "seat_no": 36, "status": "false" },
   { "seat_no": 37, "status": "false" }
-  ]), customer=Customer.create([
+  ]),  
+  customer=Customer.create([
   {
     "name": "John Doe",
     "email": "johndoe@gmail.com",
