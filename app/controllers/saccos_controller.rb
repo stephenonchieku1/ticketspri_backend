@@ -1,5 +1,4 @@
 class SaccosController < ApplicationController
-  #before_action :set_sacco, only: [:create, :show, :destroy ]
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /saccos
@@ -57,3 +56,5 @@ class SaccosController < ApplicationController
        render json: {error:"Sacco not found!"}, status: :not_found
     end 
 end
+
+
