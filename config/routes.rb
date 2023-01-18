@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :customers, only:[:create,:index,:show]
   resources :routes
   resources :seats
-  resources :saccos
   resources :bookings
   resources :selectedseats  
    delete "/selectedseats",to: "selectedseats#destroy_all"  
