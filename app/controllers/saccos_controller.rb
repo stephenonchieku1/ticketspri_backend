@@ -11,7 +11,7 @@ class SaccosController < ApplicationController
   def show
     sacco = find_sacco
             if sacco             
-            render json: sacco, status: :created
+            render json: sacco, include: ['vehicles','vehicles.route'], status: :created
             else
             render json: {error: "Not authorized"}, status: :unauthorized
             end   

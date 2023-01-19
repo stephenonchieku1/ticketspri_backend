@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :customers, only:[:create,:index,:show]
   resources :vehicles
   resources :routes
+  resources :saccos
   resources :seats
   resources :bookings
   resources :selectedseats  

@@ -3,8 +3,8 @@ class SelectedseatsController < ApplicationController
 
     # GET /selectedseats
     def index
-      selectedseats = Selectedseat.all
-      render json: selectedseats
+      selectedseats=Selectedseat.distinct.pluck(:seat_no)
+      render json: selectedseats, status: :ok
     end
   
     # GET /selectedseats/1
@@ -36,7 +36,7 @@ class SelectedseatsController < ApplicationController
   
     private
       def find_selectedseat
-        Selectedseat.find(params[:id])
+        Selectedseat.find_by(seat_no: params[:id])
       end
   
       def selectedseat_params
