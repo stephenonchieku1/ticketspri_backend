@@ -37,10 +37,10 @@ class SaccosController < ApplicationController
       end
   
 
-  #def destroy
-     #  sacco = find_sacco
-       #sacco.destroy
-       # head :no_content
+  def destroy
+       sacco = find_sacco
+       sacco.destroy
+       head :no_content
       end
 
   private
@@ -55,4 +55,5 @@ class SaccosController < ApplicationController
     def render_not_found_response
        render json: {error:"Sacco not found!"}, status: :not_found
     end 
+  end    
 

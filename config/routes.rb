@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :bookings
   resources :saccos
   resources :selectedseats
+  delete "/selectedseats",to: "selectedseats#destroy_all"
 
   get '/customer/me', to: 'sessions#show_customer'
   post '/customer/signup',  to: "customers#create"

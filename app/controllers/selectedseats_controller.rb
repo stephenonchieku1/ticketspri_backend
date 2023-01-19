@@ -3,8 +3,8 @@ class SelectedseatsController < ApplicationController
 
     # GET /selectedseats
     def index
-      selectedseats = Selectedseat.all
-      render json: selectedseats
+      selectedseats=Selectedseat.distinct.pluck(:seat_no)
+      render json: selectedseats, status: :ok
     end
   
     # GET /selectedseats/1
@@ -24,12 +24,21 @@ class SelectedseatsController < ApplicationController
       selectedseat.destroy
       head :no_content
     end
+
+    def destroy_all
+      if Selectedseat.any?
+        Selectedseat.delete_all
+        render json: {message: "All selected seats have been deleted."}
+      else
+        render json: {error: "No selected seats found"}
+      end
+    end
   
   
   
     private
       def find_selectedseat
-        Selectedseat.find(params[:id])
+        Selectedseat.find_by(:seat_no params[:id])
       end
   
       def selectedseat_params
