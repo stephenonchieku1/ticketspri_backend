@@ -38,7 +38,7 @@ class SelectedseatsController < ApplicationController
   
     private
       def find_selectedseat
-        Selectedseat.find_by(:seat_no params[:id])
+        Selectedseat.find_by(seat_no: params[:id])
       end
   
       def selectedseat_params
