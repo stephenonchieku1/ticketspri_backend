@@ -25,6 +25,12 @@ class CustomersController < ApplicationController
     end
    
     end
+
+    def destroy
+        customer = Customer.find_by(id: params[:id])
+        customer.detsroy
+        head :no_content
+    end
   
 
     private 
